@@ -13,7 +13,7 @@ export default function Component() {
   animate={{ opacity: 1, rotateX: 0 }} 
   transition={{ duration: 0.8, ease: "easeOut" }} 
 >
-  Welcome to  
+  Welcome to &nbsp;
 
   <span 
     style={{
@@ -22,7 +22,7 @@ export default function Component() {
       WebkitTextFillColor: 'transparent',
     }}
   >
-       PassKash
+  PassKash
   </span>
 </motion.h1>
         <motion.p 
@@ -35,7 +35,7 @@ export default function Component() {
         </motion.p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <motion.button 
-            className="px-6 py-3 bg-white text-[#000000] rounded-full font-semibold text-lg transition-all duration-300 ease-in-out hover:bg-opacity-90 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 flex items-center gap-2 group"
+            className="px-6 py-3 bg-white text-[#C20E4D] rounded-full font-semibold text-lg transition-all duration-300 ease-in-out hover:bg-opacity-90 hover:scale-105 focus:outline-none focus:ring-2 hover:bg-[#C20E4D] hover:text-[#ffffffff] focus:ring-white focus:ring-opacity-50 flex items-center gap-2 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -43,7 +43,7 @@ export default function Component() {
             <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </motion.button>
           <motion.button 
-            className="px-6 py-3 border-2 border-white rounded-full font-semibold text-lg transition-all duration-300 ease-in-out hover:bg-white hover:text-[#000000] focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 flex items-center gap-2 group"
+            className="px-6 py-3  rounded-full font-semibold text-lg bg-[#C20E4D] transition-all duration-300 ease-in-out hover:bg-white hover:text-[#C20E4D] focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 flex items-center gap-2 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

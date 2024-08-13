@@ -47,7 +47,7 @@ export default function Component() {
                 <motion.a
                   key={item}
                   href={`#${item.toLowerCase().replace(' ', '-')}`}
-                  className="text-white hover:text-gray-300 transition-colors duration-200 relative group"
+                  className="text-white hover:text-[#C20E4D] transition-colors duration-200 relative group"
                   whileHover={{ y: -2 }}
                   whileTap={{ y: 0 }}
                   initial={{ opacity: 0, y: -20 }}
@@ -70,12 +70,12 @@ export default function Component() {
               >
                 <Button
                   variant="outline"
-                  className="text-white border-white hover:bg-white hover:text-[#000000] transition-colors duration-300"
+                  className=" text-[#C20E4D] bg-[#ffffff] border-white hover:bg-[#C20E4D] hover:text-[#ffffff] transition-colors duration-300"
                 >
                   Login
                 </Button>
                 <Button
-                  className="bg-white text-[#000000] hover:bg-gray-200 transition-colors duration-300"
+                  className="bg-[#C20E4D] text-[#ffffff] border-white hover:text-[#C20E4D] hover:bg-[#ffffff] transition-colors duration-300"
                 >
                   Buy Tokens
                 </Button>
@@ -142,7 +142,7 @@ export default function Component() {
                   <a
                     key={item}
                     href={`#${item.toLowerCase().replace(' ', '-')}`}
-                    className="text-white hover:text-gray-300 transition-colors duration-200"
+                    className="text-white hover:text-[#C20E4D] transition-colors duration-200"
                     onClick={toggleMobileMenu}
                   >
                     {item}
