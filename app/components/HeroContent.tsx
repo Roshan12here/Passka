@@ -5,7 +5,7 @@ import { ArrowRight, ArrowRightCircle } from 'lucide-react';
 
 export default function Component() {
   return (
-    <section className="w-full min-h-screen flex items-center justify-center bg-[#000000] text-white p-4 sm:p-6 md:p-8 lg:p-12">
+    <section className="w-full min-h-screen flex items-center justify-center  text-white p-4 sm:p-6 md:p-8 lg:p-12">
       <div className="max-w-4xl mx-auto text-center">
       <motion.h1 
   className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6" 
@@ -47,7 +47,7 @@ export default function Component() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Learn More
+            Read WhitePaper
             <ArrowRightCircle className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </motion.button>
         </div>

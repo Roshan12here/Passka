@@ -28,7 +28,6 @@ export default function Component() {
         className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${
           scrolled ? 'py-2 bg-opacity-95' : 'py-4 bg-opacity-80'
         }`}
-        style={{ backgroundColor: '#000000' }}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: 'spring', stiffness: 120, damping: 20 }}
@@ -36,9 +35,14 @@ export default function Component() {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <motion.div
-              className="text-2xl font-bold text-white"
+              className="text-2xl font-bold "
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              style={{
+                background: 'linear-gradient(to right, #F54180, #C20E4D, #920B3A)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
             >
               PassCash
             </motion.div>
