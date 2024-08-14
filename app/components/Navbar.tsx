@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react'
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from 'next/image'
+import { User2Icon } from 'lucide-react'
+
 
 export default function Component() {
   const [scrolled, setScrolled] = useState(false)
@@ -16,8 +19,13 @@ export default function Component() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = ['Features', 'Services', 'About Us', 'Pricing']
-
+  const navItems = [
+    { label: 'Home', href: '#home' },
+    { label: 'Features', href: '#features' },
+    { label: 'Roadmap', href: '#roadmap' },
+    
+  ];
+  
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen)
   }
@@ -25,8 +33,8 @@ export default function Component() {
   return (
     <>
       <motion.nav
-        className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${
-          scrolled ? 'py-2 bg-opacity-95' : 'py-4 bg-opacity-80'
+        className={`fixed w-full z-50 transition-all duration-300 bg-[#000000] ease-in-out ${
+          scrolled ? 'py-3 bg-opacity-95' : 'py-5 bg-opacity-80'
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -35,37 +43,39 @@ export default function Component() {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <motion.div
-              className="text-2xl font-bold "
+              className="flex items-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              style={{
-                background: 'linear-gradient(to right, #F54180, #C20E4D, #920B3A)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-              }}
             >
-              PassCash
+              <Image
+                src="/logo.png" // Path to your logo image
+                alt="PassCash Logo"
+                width={160} // Adjust width as needed
+                height={60} // Increased height
+                className=' cursor-pointer '
+              />
             </motion.div>
             <div className="hidden lg:flex items-center space-x-8">
-              {navItems.map((item, index) => (
-                <motion.a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(' ', '-')}`}
-                  className="text-white hover:text-[#C20E4D] transition-colors duration-200 relative group"
-                  whileHover={{ y: -2 }}
-                  whileTap={{ y: 0 }}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  {item}
-                  <motion.span
-                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-in-out group-hover:w-full"
-                    initial={{ width: '0%' }}
-                    whileHover={{ width: '100%' }}
-                  />
-                </motion.a>
-              ))}
+            {navItems.map((item, index) => (
+  <motion.a
+    key={item.label}
+    href={item.href}
+    className="text-white hover:text-[#C20E4D] transition-colors duration-200 relative group text-lg"
+    whileHover={{ y: -2 }}
+    whileTap={{ y: 0 }}
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: index * 0.1 }}
+  >
+    {item.label}
+    <motion.span
+      className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-in-out group-hover:w-full"
+      initial={{ width: '0%' }}
+      whileHover={{ width: '100%' }}
+    />
+  </motion.a>
+))}
+
               <motion.div
                 className="flex space-x-4"
                 initial={{ opacity: 0, x: 20 }}
@@ -74,14 +84,10 @@ export default function Component() {
               >
                 <Button
                   variant="outline"
-                  className=" text-[#C20E4D] bg-[#ffffff] border-white hover:bg-[#C20E4D] hover:text-[#ffffff] transition-colors duration-300"
+                  className=" bg-[#C20E4D] text-[#ffffff] border-white px-2 py-2 mx-4 hover:bg-[#C20E4D] hover:text-[#ffffff] transition-colors duration-300"
                 >
+                  <User2Icon className="w-4 h-4 mr-2 text-[#ffffff]" />
                   Login
-                </Button>
-                <Button
-                  className="bg-[#C20E4D] text-[#ffffff] border-white hover:text-[#C20E4D] hover:bg-[#ffffff] transition-colors duration-300"
-                >
-                  Buy Tokens
                 </Button>
               </motion.div>
             </div>
@@ -142,28 +148,34 @@ export default function Component() {
                 </svg>
               </Button>
               <div className="flex flex-col space-y-4">
-                {navItems.map((item) => (
-                  <a
-                    key={item}
-                    href={`#${item.toLowerCase().replace(' ', '-')}`}
-                    className="text-white hover:text-[#C20E4D] transition-colors duration-200"
-                    onClick={toggleMobileMenu}
-                  >
-                    {item}
-                  </a>
-                ))}
+              {navItems.map((item, index) => (
+  <motion.a
+    key={item.label}
+    href={item.href}
+    className="text-white hover:text-[#C20E4D] transition-colors duration-200 relative group text-lg"
+    whileHover={{ y: -2 }}
+    whileTap={{ y: 0 }}
+    initial={{ opacity: 0, y: -20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: index * 0.1 }}
+  >
+    {item.label}
+    <motion.span
+      className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-in-out group-hover:w-full"
+      initial={{ width: '0%' }}
+      whileHover={{ width: '100%' }}
+    />
+  </motion.a>
+))}
+
               </div>
               <div className="mt-auto space-y-4">
                 <Button
                   variant="outline"
-                  className="w-full bg-white text-[#000000] transition-colors duration-300"
+                  className="w-full bg-[#C20E4D] text-[#ffffff] transition-colors duration-300"
                 >
+                <User2Icon className="w-4 h-4 mr-2 text-[#ffffff]" />
                   Login
-                </Button>
-                <Button
-                  className="w-full bg-white text-[#000000] hover:bg-gray-200 transition-colors duration-300"
-                >
-                  Buy Tokens
                 </Button>
               </div>
             </div>

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowRightCircle } from 'lucide-react';
 
+
 export default function Component() {
   return (
     <section className="w-full min-h-screen flex items-center justify-center  text-white p-4 sm:p-6 md:p-8 lg:p-12">
@@ -22,7 +23,7 @@ export default function Component() {
       WebkitTextFillColor: 'transparent',
     }}
   >
-  PassKash
+  PassKash Token
   </span>
 </motion.h1>
         <motion.p 
@@ -31,8 +32,7 @@ export default function Component() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          Embrace innovation and explore the possibilities of tomorrow, today.
-        </motion.p>
+Empowering the Caribbean with innovative financial solutions through PassKashToken (PKT) on the Binance Smart Chain.        </motion.p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <motion.button 
             className="px-6 py-3 bg-white text-[#C20E4D] rounded-full font-semibold text-lg transition-all duration-300 ease-in-out hover:bg-opacity-90 hover:scale-105 focus:outline-none focus:ring-2 hover:bg-[#C20E4D] hover:text-[#ffffffff] focus:ring-white focus:ring-opacity-50 flex items-center gap-2 group"

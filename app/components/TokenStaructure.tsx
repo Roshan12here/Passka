@@ -1,9 +1,9 @@
 import { FaEthereum , FaBitcoin } from "react-icons/fa";
 import { SiLitecoin , SiRipple } from "react-icons/si";
-
+import { SiTether } from "react-icons/si";
 export default function OurToken() {
   return (
-    <div className="flex flex-col md:flex-row bg-[#C20E4D] pt-6 text-white rounded-sm overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
+    <div className="flex flex-col md:flex-row bg-gradient-to-br from-[#F54180] via-[#C20E4D] to-[#920B3A] pt-6 text-white rounded-sm overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
       <div className="p-8 md:w-1/2">
         <h2 className="text-3xl font-bold mb-4">Token Structure</h2>
         <p className="mb-6">Our token structure ensures transparency, fairness, and value. Join us in revolutionizing the digital economy.</p>
@@ -12,7 +12,7 @@ export default function OurToken() {
           {[
             { Icon: FaBitcoin, name: 'Bitcoin' },
             { Icon: FaEthereum, name: 'Ethereum' },
-            { Icon: SiLitecoin, name: 'Litecoin' },
+            { Icon: SiTether, name: 'USD Tether' },
             { Icon: SiRipple, name: 'Ripple' },
           ].map(({ Icon, name }) => (
             <div key={name} className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 transition-colors duration-300 hover:bg-white/20">
@@ -37,7 +37,7 @@ export default function OurToken() {
           <div className="h-4 bg-white/20 rounded-full overflow-hidden">
             <div
               className="h-full bg-[#ffffffff] transition-all duration-1000 ease-out"
-              style={{ width: '70%' }}
+              style={{ width: '1%' }}
             ></div>
           </div>
           <div className="absolute top-0 w-full h-1 bg-white/20" style={{ left: 0, transform: 'translateY(-100%)' }}></div>
