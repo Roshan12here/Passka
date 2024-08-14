@@ -36,6 +36,7 @@ export default function Component() {
 Empowering the Caribbean with innovative financial solutions through PassKashToken (PKT) on the Binance Smart Chain.        </motion.p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <motion.button 
+          onClick={()=> router.push('https://www.passcash.org/')}
             className="px-6 py-3 bg-white text-[#C20E4D] rounded-full font-semibold text-lg transition-all duration-300 ease-in-out hover:bg-opacity-90 hover:scale-105 focus:outline-none focus:ring-2 hover:bg-[#C20E4D] hover:text-[#ffffffff] focus:ring-white focus:ring-opacity-50 flex items-center gap-2 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
