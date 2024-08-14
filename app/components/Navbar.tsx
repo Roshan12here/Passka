@@ -23,9 +23,9 @@ export default function Component() {
     { label: 'Home', href: '#home' },
     { label: 'Features', href: '#features' },
     { label: 'Roadmap', href: '#roadmap' },
-    
+
   ];
-  
+
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen)
   }
@@ -35,9 +35,8 @@ export default function Component() {
   return (
     <>
       <motion.nav
-        className={`fixed w-full z-50 transition-all duration-300 bg-[#000000] ease-in-out ${
-          scrolled ? 'py-3 bg-opacity-95' : 'py-5 bg-opacity-80'
-        }`}
+        className={`fixed w-full z-50 transition-all duration-300 bg-[#000000] ease-in-out ${scrolled ? 'py-3 bg-opacity-95' : 'py-5 bg-opacity-80'
+          }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: 'spring', stiffness: 120, damping: 20 }}
@@ -58,25 +57,25 @@ export default function Component() {
               />
             </motion.div>
             <div className="hidden lg:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-  <motion.a
-    key={item.label}
-    href={item.href}
-    className="text-white hover:text-[#C20E4D] transition-colors duration-200 relative group text-lg"
-    whileHover={{ y: -2 }}
-    whileTap={{ y: 0 }}
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: index * 0.1 }}
-  >
-    {item.label}
-    <motion.span
-      className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-in-out group-hover:w-full"
-      initial={{ width: '0%' }}
-      whileHover={{ width: '100%' }}
-    />
-  </motion.a>
-))}
+              {navItems.map((item, index) => (
+                <motion.a
+                  key={item.label}
+                  href={item.href}
+                  className="text-white hover:text-[#C20E4D] transition-colors duration-200 relative group text-lg"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ y: 0 }}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  {item.label}
+                  <motion.span
+                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-in-out group-hover:w-full"
+                    initial={{ width: '0%' }}
+                    whileHover={{ width: '100%' }}
+                  />
+                </motion.a>
+              ))}
 
               <motion.div
                 className="flex space-x-4"
@@ -152,33 +151,34 @@ export default function Component() {
                 </svg>
               </Button>
               <div className="flex flex-col space-y-4">
-              {navItems.map((item, index) => (
-  <motion.a
-    key={item.label}
-    href={item.href}
-    className="text-white hover:text-[#C20E4D] transition-colors duration-200 relative group text-lg"
-    whileHover={{ y: -2 }}
-    whileTap={{ y: 0 }}
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: index * 0.1 }}
-  >
-    {item.label}
-    <motion.span
-      className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-in-out group-hover:w-full"
-      initial={{ width: '0%' }}
-      whileHover={{ width: '100%' }}
-    />
-  </motion.a>
-))}
+                {navItems.map((item, index) => (
+                  <motion.a
+                    key={item.label}
+                    href={item.href}
+                    className="text-white hover:text-[#C20E4D] transition-colors duration-200 relative group text-lg"
+                    whileHover={{ y: -2 }}
+                    whileTap={{ y: 0 }}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    {item.label}
+                    <motion.span
+                      className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-in-out group-hover:w-full"
+                      initial={{ width: '0%' }}
+                      whileHover={{ width: '100%' }}
+                    />
+                  </motion.a>
+                ))}
 
               </div>
               <div className="mt-auto space-y-4">
                 <Button
+                  onClick={() => router.push('https://passkash.vip/public/login')}
                   variant="outline"
                   className="w-full bg-[#C20E4D] text-[#ffffff] transition-colors duration-300"
                 >
-                <User2Icon className="w-4 h-4 mr-2 text-[#ffffff]" />
+                  <User2Icon className="w-4 h-4 mr-2 text-[#ffffff]" />
                   Login
                 </Button>
               </div>
