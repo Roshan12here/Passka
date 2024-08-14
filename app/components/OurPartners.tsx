@@ -13,7 +13,7 @@ export default function OurPartners() {
           {[{
             src: "/passcash.png",
             alt: "Partner 1",
-            name: "PassKash"
+            name: "PassCash"
           }, {
             src: "/pas2.png",
             alt: "Partner 2",

@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from 'next/image'
 import { User2Icon } from 'lucide-react'
-
+import { useRouter } from 'next/navigation'
 
 export default function Component() {
   const [scrolled, setScrolled] = useState(false)
@@ -29,6 +29,8 @@ export default function Component() {
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen)
   }
+
+  const router = useRouter()
 
   return (
     <>
@@ -84,6 +86,7 @@ export default function Component() {
               >
                 <Button
                   variant="outline"
+                  onClick={() => router.push('https://passkash.vip/public/login')}
                   className=" bg-[#C20E4D] text-[#ffffff] border-white px-2 py-2 mx-4 hover:bg-[#C20E4D] hover:text-[#ffffff] transition-colors duration-300"
                 >
                   <User2Icon className="w-4 h-4 mr-2 text-[#ffffff]" />
@@ -116,6 +119,7 @@ export default function Component() {
           </div>
         </div>
       </motion.nav>
+
 
       <AnimatePresence>
         {mobileMenuOpen && (
