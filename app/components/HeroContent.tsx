@@ -48,7 +48,7 @@ Empowering the Caribbean with innovative financial solutions through PassKashTok
             className="px-6 py-3  rounded-full font-semibold text-lg bg-[#C20E4D] transition-all duration-300 ease-in-out hover:bg-white hover:text-[#C20E4D] focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 flex items-center gap-2 group"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-          >
+          >     
             Read WhitePaper
             <ArrowRightCircle className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
           </motion.button>
