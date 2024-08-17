@@ -30,7 +30,28 @@ export default function OurPartners() {
             src: "/22a.svg",
             alt: "Partner 5",
             name: "Ladger"
-          }].map((partner, index) => (
+          },
+          {
+            src: "/p1.png",
+            alt: "Partner 5",
+            name: "PancakeSwap"
+          },
+          {
+            src: "/m1.png",
+            alt: "Partner 5",
+            name: "Mdex"
+          },
+          {
+            src: "/m2.png",
+            alt: "Partner 5",
+            name: "BSCswap"
+          },
+          {
+            src: "/m3.jpg",
+            alt: "Partner 5",
+            name: "AnySwap"
+          },
+        ].map((partner, index) => (
             <motion.div
               key={index}
               whileHover={{ scale: 1.05, y: -10 }}
@@ -40,9 +61,9 @@ export default function OurPartners() {
               <img
                 src={partner.src}
                 alt={partner.alt}
-                width={120} // Increased width
-                height={120} // Increased height
-                className="mb-4"
+                width={120}
+                height={120}
+                className="mb-4 filter grayscale hover:grayscale-0 hover:contrast-125 transition duration-300 ease-in-out"
                 style={{ aspectRatio: "1/1", objectFit: "contain" }}
               />
               <h3 className="mb-2 text-lg font-semibold">{partner.name}</h3>
