@@ -7,6 +7,7 @@ import { RiDiscordFill } from "react-icons/ri"
 import { FaReddit, FaLinkedin, FaTelegram } from "react-icons/fa"
 import { motion } from "framer-motion"
 
+
 export default function Component() {
   return (
     <footer className="bg-gray-950 text-[#ffffff]">
@@ -77,10 +78,16 @@ export default function Component() {
             </Card>
           </div>
         </div>
-        <div className="mt-12 border-t pt-6 text-center text-sm text-[#ffffff]">
-          <p>Copyright © 2024 PassKash. All rights reserved.</p>
-        </div>
+        <div className="mt-12 flex flex-col sm:flex-row justify-between items-center border-t pt-6 text-center text-sm text-[#ffffff]">
+  <p className="mb-4 sm:mb-0">Copyright © 2024 PassKash. All rights reserved.</p>
+  <div className="flex gap-6">
+    <p>Terms and Conditions</p>
+    <p>Privacy Policy</p>
+  </div>
+</div>
       </div>
     </footer>
   )
 }
+
+
