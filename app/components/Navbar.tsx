@@ -23,8 +23,7 @@ export default function Component() {
     { label: 'Home', href: '#home' },
     { label: 'Features', href: '#features' },
     { label: 'Roadmap', href: '#roadmap' },
-
-  ];
+  ]
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen)
@@ -76,13 +75,19 @@ export default function Component() {
                   />
                 </motion.a>
               ))}
-
               <motion.div
                 className="flex space-x-4"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.5 }}
               >
+                <Button
+                  variant="outline"
+                  onClick={() => router.push('https://bscscan.com/token/0x96fba2c56d22539acbcb8aa5df7f3e23dd837720')}
+                  className="bg-[#ffffff] text-[#C20E4D] border-white px-2 py-2 hover:bg-[#C20E4D] hover:text-[#ffffff] transition-colors duration-300"
+                >
+                  View Our Token
+                </Button>
                 <Button
                   variant="outline"
                   onClick={() => router.push('https://passkash.vip/public/login')}
@@ -118,7 +123,6 @@ export default function Component() {
           </div>
         </div>
       </motion.nav>
-
 
       <AnimatePresence>
         {mobileMenuOpen && (
@@ -170,9 +174,15 @@ export default function Component() {
                     />
                   </motion.a>
                 ))}
-
               </div>
               <div className="mt-auto space-y-4">
+                <Button
+                  onClick={() => router.push('https://bscscan.com/token/0x96fba2c56d22539acbcb8aa5df7f3e23dd837720')}
+                  variant="outline"
+                  className="w-full bg-[#ffffff] text-[#C20E4D] transition-colors duration-300"
+                >
+                  View Tokens
+                </Button>
                 <Button
                   onClick={() => router.push('https://passkash.vip/public/login')}
                   variant="outline"
