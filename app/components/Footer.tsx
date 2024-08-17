@@ -7,7 +7,6 @@ import { RiDiscordFill } from "react-icons/ri"
 import { FaReddit, FaLinkedin, FaTelegram } from "react-icons/fa"
 import { motion } from "framer-motion"
 
-
 export default function Component() {
   return (
     <footer className="bg-gray-950 text-[#ffffff]">
@@ -16,16 +15,13 @@ export default function Component() {
           <div className="grid gap-2">
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <nav className="grid gap-2">
-
               <Link href="https://read.passkash.vip/whitepaper" passHref>
-                <div
-                >
+                <div>
                   About
                 </div>
               </Link>
               <Link href="https://www.passcash.org/" passHref>
-                <div
-                >
+                <div>
                   Services
                 </div>
               </Link>
@@ -79,15 +75,17 @@ export default function Component() {
           </div>
         </div>
         <div className="mt-12 flex flex-col sm:flex-row justify-between items-center border-t pt-6 text-center text-sm text-[#ffffff]">
-  <p className="mb-4 sm:mb-0">Copyright © 2024 PassKash. All rights reserved.</p>
-  <div className="flex gap-6">
-    <p>Terms and Conditions</p>
-    <p>Privacy Policy</p>
-  </div>
-</div>
+          <p className="mb-4 sm:mb-0">Copyright © 2024 PassKash. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link href="https://passkash.vip/public/terms-and-condition" passHref>
+              <p className="cursor-pointer">Terms and Conditions</p>
+            </Link>
+            <Link href="https://passkash.vip/public/privacy-policy" passHref>
+              <p className="cursor-pointer">Privacy Policy</p>
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   )
 }
-
-
