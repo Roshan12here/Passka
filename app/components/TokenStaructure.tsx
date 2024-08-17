@@ -1,6 +1,8 @@
 import { FaEthereum , FaBitcoin } from "react-icons/fa";
-import { SiLitecoin , SiRipple } from "react-icons/si";
+import { SiBinance , SiRipple } from "react-icons/si";
 import { SiTether } from "react-icons/si";
+
+
 export default function OurToken() {
   return (
     <div className="flex flex-col md:flex-row bg-gradient-to-br from-[#F54180] via-[#C20E4D] to-[#920B3A] pt-6 text-white rounded-sm overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]">
@@ -14,6 +16,7 @@ export default function OurToken() {
             { Icon: FaEthereum, name: 'Ethereum' },
             { Icon: SiTether, name: 'USD Tether' },
             { Icon: SiRipple, name: 'Ripple' },
+            { Icon: SiBinance, name: 'Binance Chain wallet' },
           ].map(({ Icon, name }) => (
             <div key={name} className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2 transition-colors duration-300 hover:bg-white/20">
               <Icon className="w-6 h-6" />
