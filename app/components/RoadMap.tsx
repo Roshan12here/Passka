@@ -1,156 +1,80 @@
-"use client";
+"use client"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { CheckCircle } from "lucide-react"
+import { motion } from "framer-motion"
 
-import { motion } from 'framer-motion';
-import { Pie } from 'react-chartjs-2';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import Tokenomics from './tokenomics';
+interface RoadmapItem {
+  title: string
+  description: string[]
+  date: string
+  status: "completed" | "in-progress" | "upcoming"
+}
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+const roadmapData: RoadmapItem[] = [
+  {
+    title: "Launch & Initial Distribution",
+    description: ["Distribute initial token supply.", "Launch PassKashToken on Binance Smart Chain.", "Begin staking and vesting programs"],
+    date: "Q3 2024",
+    status: "in-progress",
+  },
+  {
+    title: "Research",
+    description: ["Objective Definition", "Data Collection", "Analysis", "Reporting"],
+    date: "Mid of Q3 2024",
+    status: "in-progress",
+  },
+  {
+    title: "Ecosystem Expansion",
+    description: ["Integrate with PassCash financial products.", "Launch marketing campaigns in the Caribbean and beyond.", "Introduce governance features to the community."],
+    date: "Q4 2024",
+    status: "in-progress",
+  },
+  {
+    title: "App Beta Test",
+    description: ["Selection Criteria", "Testing Environment Setup", "Feedback Collection", "Iterative Improvement"],
+    date: "Mid of Q4 2024",
+    status: "in-progress",
+  },
+]
 
-export default function Component() {
-  const allocationData = [
-    { name: 'Investment In Projects', value: 56, color: '#14F195' },
-    { name: 'Platform Development', value: 24, color: '#0CE7FA' },
-    { name: 'Infrastructure', value: 12, color: '#009EFF' },
-    { name: 'Marketing', value: 8, color: '#F32424' },
-  ];
-
-  const governanceData = [
-    { name: 'PassKash Holders', value: 25, color: '#FFD700' },
-    { name: 'Members', value: 25, color: '#4200FF' },
-    { name: 'Leaders', value: 20, color: '#F500A2' },
-    { name: 'Founders', value: 10, color: '#0CE7FA' },
-    { name: 'Co-Creators', value: 20, color: '#009EFF' },
-  ];
-
-  const allocationChartData = {
-    labels: allocationData.map(item => item.name),
-    datasets: [
-      {
-        data: allocationData.map(item => item.value),
-        backgroundColor: allocationData.map(item => item.color),
-        borderColor: allocationData.map(item => item.color),
-        borderWidth: 1,
-      },
-    ],
-  };
-
-  const governanceChartData = {
-    labels: governanceData.map(item => item.name),
-    datasets: [
-      {
-        data: governanceData.map(item => item.value),
-        backgroundColor: governanceData.map(item => item.color),
-        borderColor: governanceData.map(item => item.color),
-        borderWidth: 1,
-      },
-    ],
-  };
-
-  const chartOptions = {
-    plugins: {
-      legend: {
-        display: false,
-      },
-    },
-  };
-
+export default function RoadmapComponent() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#000000] to-[#0f0f0f] text-white p-8">
-      <motion.h2
-        initial={{ y: 50 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-3xl md:text-5xl text-center font-bold text-[#ffffff] mb-8"
-      >
-        Introduction to the PassKash
-        <br />
-        tokenomics
-      </motion.h2>
-      <div className="grid md:grid-cols-2 gap-8">
-        {/* Left Column: PassKash Distribution */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="bg-gradient-to-br from-[#000000] via-[#331029] to-[#310413] p-6 rounded-lg shadow-lg"
-        >
-          <Tokenomics />
-        </motion.div>
-
-        {/* Right Column: Allocation and Governance stacked vertically */}
-        <div className="flex flex-col gap-8">
+    <div id="roadmap" className="container bg-gradient-to-br from-[#000000] via-[#331029] to-[#310413] mx-auto px-4 py-12">
+      <h2 className="text-4xl font-bold mb-10 text-center text-white">Our Roadmap</h2>
+      <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-gray-200 before:via-gray-400 before:to-gray-200 md:before:mx-auto md:before:left-0 md:before:right-0 md:space-y-0">
+        {roadmapData.map((item, index) => (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gradient-to-br from-[#000000] via-[#331029] to-[#310413] p-8 rounded-lg shadow-lg flex flex-col justify-between items-center"
+            key={index}
+            className="relative flex items-center md:justify-center"
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true }}  // Ensure the animation only plays once when scrolled into view
           >
-            <h2 className="text-2xl font-bold mb-4 text-center">Allocation Of Resources</h2>
-            <div className="flex flex-col gap-4 items-center">
-              {allocationData.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  className="flex items-center gap-2 text-white"
-                >
-                  <span
-                    className="w-4 h-4 rounded-full"
-                    style={{ backgroundColor: item.color }}
-                  />
-                  <span className="text-sm">{item.name} - {item.value}%</span>
-                </motion.div>
-              ))}
-            </div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="w-48 h-48 md:w-56 md:h-56 mt-4" // Added margin-top
+            <Badge
+              variant={item.status === "completed" ? "default" : "secondary"}
+              className="absolute left-0 md:left-1/2 md:-translate-x-1/2 flex h-10 w-10 items-center justify-center rounded-full border border-background shadow"
             >
-              <Pie data={allocationChartData} options={chartOptions} />
-            </motion.div>
+              {item.status === "completed" && <CheckCircle className="h-5 w-5 text-green-500" />}
+              {item.status === "in-progress" && <div className="h-3 w-3 rounded-full bg-[#331029]  animate-pulse" />}
+            </Badge>
+            <Card className={`ml-14 md:w-5/12 border bg-gradient-to-br from-[#000000] via-[#331029] to-[#310413]  ${index % 2 === 0 ? 'md:ml-auto' : 'md:mr-auto'} shadow-lg`}>
+              <CardHeader>
+                <CardTitle className="text-2xl font-semibold text-white">{item.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className={`list-disc pl-5 text-gray-300 ${index % 2 !== 0 ? 'md:pl-0 md:pr-5 md:list-inside' : ''}`}>
+                  {item.description.map((desc, i) => (
+                    <li key={i} className="mb-1">{desc}</li>
+                  ))}
+                </ul>
+                <p className="text-sm text-gray-400 mt-2">{item.date}</p>
+              </CardContent>
+            </Card>
           </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-gradient-to-br from-[#000000] via-[#331029] to-[#310413] p-8 rounded-lg shadow-lg flex flex-col justify-between items-center"
-          >
-            <h2 className="text-2xl font-bold mb-4 text-center">PassKash Governance</h2>
-            <div className="flex flex-col gap-4 items-center">
-              {governanceData.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  className="flex items-center gap-2 text-white"
-                >
-                  <span
-                    className="w-4 h-4 rounded-full"
-                    style={{ backgroundColor: item.color }}
-                  />
-                  <span className="text-sm">{item.name} - {item.value}%</span>
-                </motion.div>
-              ))}
-            </div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="w-48 h-48 md:w-56 md:h-56 mt-4" // Added margin-top
-            >
-              <Pie data={governanceChartData} options={chartOptions} />
-            </motion.div>
-          </motion.div>
-        </div>
+        ))}
       </div>
     </div>
-  );
+  )
 }
