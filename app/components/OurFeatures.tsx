@@ -74,7 +74,7 @@ export default function Component() {
   return (
     <div id='features' className=" min-h-screen bg-gray-900 text-white p-8">
         <h1
-className="text-3xl md:text-5xl text-center font-bold text-[#C20E4D] mb-8"
+className="text-3xl md:text-5xl text-center font-bold text-[#ffffff] mb-8"
         >
 Our Features
         </h1>
@@ -87,7 +87,7 @@ Our Features
         {features.map((feature, index) => (
           <motion.div
             key={index}
-            className=" rounded-lg p-6 flex bg-gradient-to-br from-[#610726] via-[#920B3A] to-[#310413] flex-col items-start space-y-4 hover:shadow-lg transition-shadow duration-300 relative overflow-hidden"
+            className=" rounded-lg p-6 flex bg-gradient-to-br from-[#000000] via-[#331029] to-[#310413] flex-col items-start space-y-4 hover:shadow-lg transition-shadow duration-300 relative overflow-hidden"
             variants={itemVariants}
           >
             <motion.div
