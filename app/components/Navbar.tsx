@@ -34,7 +34,7 @@ export default function Component() {
   return (
     <>
       <motion.nav
-        className={`fixed w-full z-50 transition-all duration-300 bg-[#000000] ease-in-out ${scrolled ? 'py-3 bg-opacity-95' : 'py-5 bg-opacity-80'
+        className={`fixed w-full z-50 transition-all duration-300 ease-in-out ${scrolled ? 'bg-[#ffffff] text-black py-3 bg-opacity-95' : 'bg-[#000000] text-white py-5 bg-opacity-80'
           }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -48,11 +48,11 @@ export default function Component() {
               whileTap={{ scale: 0.95 }}
             >
               <Image
-                src="/logo.png" // Path to your logo image
+                src="/logo.png"
                 alt="PassCash Logo"
-                width={160} // Adjust width as needed
-                height={60} // Increased height
-                className=' cursor-pointer '
+                width={160}
+                height={60}
+                className='cursor-pointer'
               />
             </motion.div>
             <div className="hidden lg:flex items-center space-x-8">
@@ -60,7 +60,7 @@ export default function Component() {
                 <motion.a
                   key={item.label}
                   href={item.href}
-                  className="text-white hover:text-[#C20E4D] transition-colors duration-200 relative group text-lg"
+                  className={`transition-colors duration-200 relative group text-lg ${scrolled ? 'text-black hover:text-[#C20E4D]' : 'text-white hover:text-[#C20E4D]'}`}
                   whileHover={{ y: -2 }}
                   whileTap={{ y: 0 }}
                   initial={{ opacity: 0, y: -20 }}
@@ -69,7 +69,7 @@ export default function Component() {
                 >
                   {item.label}
                   <motion.span
-                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 ease-in-out group-hover:w-full"
+                    className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 ease-in-out group-hover:w-full ${scrolled ? 'bg-black' : 'bg-white'}`}
                     initial={{ width: '0%' }}
                     whileHover={{ width: '100%' }}
                   />
@@ -84,16 +84,16 @@ export default function Component() {
                 <Button
                   variant="outline"
                   onClick={() => router.push('https://bscscan.com/token/0x96fba2c56d22539acbcb8aa5df7f3e23dd837720')}
-                  className="bg-[#ffffff] text-[#C20E4D] border-white px-2 py-2 hover:bg-[#C20E4D] hover:text-[#ffffff] transition-colors duration-300"
+                  className={`px-4 py-2 hover:bg-gradient-to-r from-[#C20E4D] to-[#ff6f61] hover:text-[#ffffff] transition-all duration-300 transform hover:scale-105 rounded-full shadow-md ${scrolled ? 'bg-black text-white' : 'bg-white text-[#C20E4D]'}`}
                 >
                   View Our Token
                 </Button>
                 <Button
                   variant="outline"
                   onClick={() => router.push('https://passkash.vip/public/login')}
-                  className=" bg-[#C20E4D] text-[#ffffff] border-white px-2 py-2 mx-4 hover:bg-[#C20E4D] hover:text-[#ffffff] transition-colors duration-300"
+                  className={`px-4 py-2 mx-4 hover:bg-gradient-to-r from-[#C20E4D] to-[#ff6f61] hover:text-[#ffffff] transition-all duration-300 transform hover:scale-105 rounded-full shadow-md ${scrolled ? 'bg-[#C20E4D] text-white' : 'bg-[#C20E4D] text-[#ffffff]'}`}
                 >
-                  <User2Icon className="w-4 h-4 mr-2 text-[#ffffff]" />
+                  <User2Icon className="w-4 h-4 mr-2" />
                   Login
                 </Button>
               </motion.div>
@@ -103,7 +103,7 @@ export default function Component() {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
-              <Button variant="ghost" className="text-white" onClick={toggleMobileMenu}>
+              <Button variant="ghost" onClick={toggleMobileMenu} className={`${scrolled ? 'text-black' : 'text-white'}`}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -136,7 +136,7 @@ export default function Component() {
             <div className="flex flex-col h-full">
               <Button
                 variant="ghost"
-                className="self-end text-white mb-8"
+                className="self-end mb-8 text-white"
                 onClick={toggleMobileMenu}
               >
                 <svg
@@ -179,14 +179,14 @@ export default function Component() {
                 <Button
                   onClick={() => router.push('https://bscscan.com/token/0x96fba2c56d22539acbcb8aa5df7f3e23dd837720')}
                   variant="outline"
-                  className="w-full bg-[#ffffff] text-[#C20E4D] transition-colors duration-300"
+                  className="w-full bg-white text-[#C20E4D] transition-all duration-300 transform hover:scale-105 rounded-full shadow-md"
                 >
                   View Tokens
                 </Button>
                 <Button
                   onClick={() => router.push('https://passkash.vip/public/login')}
                   variant="outline"
-                  className="w-full bg-[#C20E4D] text-[#ffffff] transition-colors duration-300"
+                  className="w-full bg-gradient-to-r from-[#C20E4D] to-[#ff6f61] text-white transition-all duration-300 transform hover:scale-105 rounded-full shadow-md"
                 >
                   <User2Icon className="w-4 h-4 mr-2 text-[#ffffff]" />
                   Login
