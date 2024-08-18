@@ -56,7 +56,7 @@ export default function OurPartners() {
               key={index}
               whileHover={{ scale: 1.05, y: -10 }}
               transition={{ type: 'spring', stiffness: 300 }}
-              className="flex-shrink-0 cursor-pointer w-48 flex flex-col items-center rounded-lg p-6 shadow-md bg-gradient-to-br from-[#F54180] via-[#C20E4D] to-[#920B3A] border-2 border-transparent text-[#ffffffff]"
+              className="flex-shrink-0 cursor-pointer w-48 flex flex-col items-center rounded-lg p-6 shadow-md bg-gradient-to-br from-[#000000] via-[#331029] to-[#310413] border-2 border-transparent text-[#ffffffff]"
             >
               <img
                 src={partner.src}
