@@ -15,7 +15,7 @@ export default function OurToken() {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className="flex flex-col md:flex-row bg-gradient-to-br from-[#F54180] via-[#C20E4D] to-[#920B3A] pt-6 text-white rounded-none overflow-hidden shadow-lg transition-transform duration-500 hover:shadow-2xl hover:scale-[1.05]"
+      className="flex flex-col md:flex-row bg-gradient-to-br from-[#000000] via-[#331029] to-[#310413] pt-6 text-white rounded-none overflow-hidden shadow-lg transition-transform duration-500 hover:shadow-2xl hover:scale-[1.05]"
     >
       <div className="p-8 md:w-1/2">
         <motion.h2
