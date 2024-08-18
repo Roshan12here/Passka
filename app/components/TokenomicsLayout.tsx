@@ -61,7 +61,7 @@ export default function Component() {
         initial={{ y: 50 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-3xl md:text-5xl text-center font-bold text-[#C20E4D] mb-8"
+        className="text-3xl md:text-5xl text-center font-bold text-[#ffffff] mb-8"
       >
         Introduction to the PassKash
         <br />
@@ -73,7 +73,7 @@ export default function Component() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="bg-[#310413] p-6 rounded-lg shadow-lg"
+          className="bg-gradient-to-br from-[#000000] via-[#331029] to-[#310413] p-6 rounded-lg shadow-lg"
         >
           <Tokenomics />
         </motion.div>
@@ -84,7 +84,7 @@ export default function Component() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-[#310413] p-8 rounded-lg shadow-lg flex flex-col justify-between items-center"
+            className="bg-gradient-to-br from-[#000000] via-[#331029] to-[#310413] p-8 rounded-lg shadow-lg flex flex-col justify-between items-center"
           >
             <h2 className="text-2xl font-bold mb-4 text-center">Allocation Of Resources</h2>
             <div className="flex flex-col gap-4 items-center">
@@ -119,7 +119,7 @@ export default function Component() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="bg-[#310413] p-8 rounded-lg shadow-lg flex flex-col justify-between items-center"
+            className="bg-gradient-to-br from-[#000000] via-[#331029] to-[#310413] p-8 rounded-lg shadow-lg flex flex-col justify-between items-center"
           >
             <h2 className="text-2xl font-bold mb-4 text-center">PassKash Governance</h2>
             <div className="flex flex-col gap-4 items-center">
