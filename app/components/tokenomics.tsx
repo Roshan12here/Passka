@@ -39,7 +39,7 @@ const chartOptions = {
 const Tokenomics = () => {
   return (
     <section className='flex  flex-col py-4 items-center'>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-[#310413]">
+      <div className="flex flex-col items-center justify-center min-h-screen from-[#000000] via-[#331029] to-[#310413]">
         <div className="flex flex-col items-center gap-10">
           <div className="flex flex-col gap-4 items-center">
           <h2 className="text-2xl font-bold mb-4">PassKash distribution</h2>
