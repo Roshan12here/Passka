@@ -37,7 +37,7 @@ export default function Component() {
                 Partner With Us
               </Link>
               <div className="flex space-x-4 mt-4">
-                <Link href="https://www.reddit.com/r/PassKash/" passHref>
+                <Link href=" https://www.reddit.com/r/PKTToken/" passHref>
                   <motion.div
                     whileHover={{ scale: 1.2, rotate: 15 }}
                     whileTap={{ scale: 0.9, rotate: -15 }}
