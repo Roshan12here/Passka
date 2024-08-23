@@ -42,7 +42,7 @@ const Tokenomics = () => {
       <div className="flex flex-col items-center justify-center min-h-screen from-[#000000] via-[#331029] to-[#310413]">
         <div className="flex flex-col items-center gap-10">
           <div className="flex flex-col gap-4 items-center">
-          <h2 className="text-2xl font-bold mb-4">PassKash distribution</h2>
+            <h2 className="text-2xl font-bold mb-4 text-center text-white">PassKash distribution</h2>   
             {data.map((item, index) => (
               <motion.div
                 key={index}
