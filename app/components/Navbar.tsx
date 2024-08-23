@@ -175,7 +175,7 @@ export default function Component() {
                   </motion.a>
                 ))}
               </div>
-              <div className="mt-auto space-y-4">
+              <div className="mt-8 space-y-4"> {/* Adjusted margin-top */}
                 <Button
                   onClick={() => router.push('https://bscscan.com/token/0x96fba2c56d22539acbcb8aa5df7f3e23dd837720')}
                   variant="outline"
