@@ -2,7 +2,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CheckCircle } from "lucide-react"
-import { motion } from "framer-motion"
 
 interface RoadmapItem {
   title: string
@@ -44,13 +43,9 @@ export default function RoadmapComponent() {
       <h2 className="text-4xl font-bold mb-10 text-center text-white">Our Roadmap</h2>
       <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-gray-200 before:via-gray-400 before:to-gray-200 md:before:mx-auto md:before:left-0 md:before:right-0 md:space-y-0">
         {roadmapData.map((item, index) => (
-          <motion.div
+          <div
             key={index}
-            className="relative flex items-center md:justify-center"
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}  // Ensure the animation only plays once when scrolled into view
+            className={`relative flex items-center md:justify-center`}
           >
             <Badge
               variant={item.status === "completed" ? "default" : "secondary"}
@@ -72,7 +67,7 @@ export default function RoadmapComponent() {
                 <p className="text-sm text-gray-400 mt-2">{item.date}</p>
               </CardContent>
             </Card>
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>
