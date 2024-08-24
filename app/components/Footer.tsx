@@ -65,7 +65,7 @@ export default function Component() {
               </CardHeader>
               <CardContent className="space-y-2 items-center">
                 <Button className="px-16 py-4 bg-[#C20E4D] text-xl">
-                  <a href="https://discord.com/invite/eFyMRNSx" className="flex items-center">
+                  <a href="https://discord.com/invite/GDAsPDTfNe" className="flex items-center">
                     <RiDiscordFill className="text-[#ffffff] mr-2 h-6 w-6" />
                     Join
                   </a>
