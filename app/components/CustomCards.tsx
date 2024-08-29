@@ -21,7 +21,7 @@ export default function Home() {
           icon={<RiLuggageDepositFill className="w-8 h-8 text-[#331029]" />}
         />
         <AnimatedCard 
-          title="Bitcoin Investment" 
+          title="PassKash Investment" 
           description="To start investing, select your desired amount and proceed with the investment options." 
           icon={<BsCurrencyBitcoin className="w-8 h-8 text-[#331029]" />}
         />
