@@ -28,7 +28,7 @@ export default function Component() {
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.4 }}
           >
-            PassKash ICO
+            PassKash Token
           </motion.span>
         </motion.h1>
         <motion.p
